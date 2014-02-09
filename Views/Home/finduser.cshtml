@@ -1,0 +1,29 @@
+﻿@model Project.Models.usertable
+@{
+    ViewBag.Title = "deleteuser";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>User Details</legend>
+
+    <div >
+        
+       FirstName:  @Model.fname
+    </div>
+    
+    <div >
+        LastName : @Model.lname
+    </div>
+    
+
+    <div >
+        Email : @Model.email
+    </div>
+   
+</fieldset>
+    <form  action="/Home/deleteuser/@Model.Id" method="post">
+        <input type="submit" value="Delete" /> 
+    </form>
+    @Html.ActionLink("Back to List", "adminmain")
+

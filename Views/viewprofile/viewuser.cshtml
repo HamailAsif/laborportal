@@ -1,0 +1,22 @@
+﻿@model Project.Models.usertable
+@{
+    ViewBag.Title = "viewuser";
+}
+
+<br><br>
+<div class="container-fluid well span6">
+	<div class="row-fluid">
+        <div class="span2" >
+		    <img src="@Model.address" style="height:100px" class="img-circle" >
+        </div>
+        
+        <div class="span8">
+            <h3>@Model.fname @Model.lname</h3>
+            <h6>Profession: @Model.profession</h6>
+            <h6>Email: @Model.email</h6>
+            <h6>Contact#:@Model.phoneno</h6>
+            <h6>Experience:@Model.experience</h6>
+           
+        </div>
+</div>
+</div>

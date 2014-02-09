@@ -1,0 +1,32 @@
+﻿@model List<Project.Models.professiontable>
+@{
+    ViewBag.Title = "viewprofession";
+}
+<table class="table table-striped">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+    </tr>
+    
+@foreach (var item in ViewBag.a)
+{
+    <tr>
+        <td>
+         @item.Id
+         </td>
+        <td>
+         @item.name
+        </td>
+        <td>
+         <a href="~/Home/deleteprofession/@item.Id">Delete</a>
+       </td>
+    </tr>
+}
+    </table>
+<p>
+    @Html.ActionLink("Back to List", "adminmain")
+</p>

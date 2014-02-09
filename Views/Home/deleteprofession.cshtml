@@ -1,0 +1,22 @@
+﻿@model Project.Models.professiontable
+@{
+    ViewBag.Title = "deleteprofession";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Profession</legend>
+
+    <div >
+        
+       ProfessionName:  @Model.name
+    </div>
+    
+   
+</fieldset>
+    <form  action="/Home/delprofession/@Model.Id" method="post">
+        <input type="submit" value="Delete" /> 
+    </form>
+    @Html.ActionLink("Back to List", "adminmain")
+
+

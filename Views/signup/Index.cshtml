@@ -1,0 +1,104 @@
+﻿@model Project.Models.professiontable
+@{
+    ViewBag.Title = "Sign Up";
+}
+
+ <script type="text/javascript">
+        function chk() {
+
+            var userName = $('#email').val();
+            //alert('User Name ='+ userName);
+
+            $.getJSON("/Home/chkValidity?email=" + userName, function (data) {
+
+                if (data) {
+                    $('#result').text("User Already Exist");
+
+                    return false;
+                }
+                else {
+                    $('#result').text("User Available");
+                    return true;;
+
+                }
+            });
+        }
+    </script>
+<form class="form-horizontal" id=profession method="post" action="/signup/adduser" enctype="multipart/form-data" role="form">
+     <div class="form-group">
+    <label for="Signin" class="col-sm-5 control-label"><h2>Sign Up</h2></label>
+  </div>
+  <div class="form-group">
+    <label for="fname" class="col-sm-3 control-label">First Name</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" name="fname" id="fname" placeholder="FirstName" required autofocus>
+    </div>
+  </div>
+    <div class="form-group">
+    <label for="lname" class="col-sm-3 control-label">Last Name</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" name="lname" id="lname" placeholder="LastName" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="Email" class="col-sm-3 control-label">Email</label>
+    <div class="col-sm-3">
+      <input type="email" name="email" class="form-control" id="email" placeholder="Email" onchange="chk();" required>
+    </div>
+      <div id="result"></div>
+  </div>
+  <div class="form-group">
+    <label for="Password" class="col-sm-3 control-label">Password</label>
+    <div class="col-sm-3">
+      <input type="password" name="password" class="form-control" id="password" placeholder="Password"  minlength="10" required >
+    </div>
+  </div>
+  
+   <div class="form-group">
+    <label for="phone" class="col-sm-3 control-label">Phone#</label>
+    <div class="col-sm-3">
+      <input type="text" name="phoneno" class="form-control" id="phone" placeholder="Phone"  minlength="10" required>
+    </div>
+  </div>
+    <div class="form-group">
+    <label for="experince" class="col-sm-3 control-label">Experince</label>
+    <div class="col-sm-3">
+      <input type="number" name="experience" class="form-control" id="experince" placeholder="Enter Digit"  min="0" max="20" required >
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="profession" class="col-sm-3 control-label">Profession</label>
+   
+  <div class="container"  style="margin-left: 150pt">
+    <div class="row">    	
+        <div class="col-sm-3" >
+            <select name="profession" class="form-control required multiselect multiselect-icon">          
+              <option value="">Select Profession</option>  
+              <option value="cook" >Cook</option>
+              <option value="painter">Painter</option>
+              <option value="builder">Builder</option>
+              <option value="designer">Designer</option> 
+              <option value="plumber">plumber</option>        
+           @*  @foreach (var item in ViewBag.a)
+              {
+                  <option value="@item.name">@item.name</option>
+              }*@
+  
+  
+            </select> 
+        </div>       
+	</div>
+      </div>
+    </div>
+      <div class="form-group" id="file">
+    <label for="profession" class="col-sm-3 control-label">Upload</label>
+    <input type="file" class="left" id="field" name="field" style="margin-left: 230pt" required/>
+     </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-5">
+      <button type="submit" class="btn btn-default">Sign Up</button>
+    </div>
+      </div>
+
+</form>

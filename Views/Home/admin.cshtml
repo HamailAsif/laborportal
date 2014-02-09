@@ -1,0 +1,51 @@
+﻿@model Project.Models.admintable
+
+<form class="form-horizontal" method="post" action="/Home/logout" id=show role="form">
+  <div class="form group">
+    <div class="col-sm-offset-10 col-sm-1">
+    <button class="btn btn-primary" type="submit">Logout</button>
+    </div>
+      </div>
+    </form>
+ <form class="form-horizontal" method="post" action="/Home/admin" id=admin role="form">
+     <div class="form-group">
+    <div class="col-sm-offset-1 col-sm-1">
+      <button type="submit" class="btn btn-default">Add Admin</button>
+    </div>
+    </div>
+ </form>
+ @*<form class="form-horizontal" method="post" action="/Home/updateadmin/@Model.Id"  role="form">
+     <div class="form-group">
+    <div class="col-sm-offset-1 col-sm-1">
+      <button type="submit" class="btn btn-default">update</button>
+    </div>
+    </div>
+ </form>*@
+<form class="form-horizontal" method="post" action="/Home/viewuser" id=viewuser role="form">
+     <div class="form-group">
+    <div class="col-sm-offset-1 col-sm-1">
+      <button type="submit" class="btn btn-default">View Users</button>
+    </div>
+    </div>
+ </form>
+<form class="form-horizontal" method="post" action="/Home/profession" id=profession role="form">
+     <div class="form-group">
+    <div class="col-sm-offset-1 col-sm-1">
+      <button type="submit" class="btn btn-default">Add Profession</button>
+    </div>
+    </div>
+ </form>
+<form class="form-horizontal" method="post" action="/Home/viewprofession" id=viewprofession role="form">
+     <div class="form-group">
+    <div class="col-sm-offset-1 col-sm-1">
+      <button type="submit" class="btn btn-default">View Profession</button>
+    </div>
+    </div>
+ </form>
+<form class="form-horizontal" method="post" action="/Home/viewfeedback"  role="form">
+     <div class="form-group">
+    <div class="col-sm-offset-1 col-sm-1">
+      <button type="submit" class="btn btn-default">View feedback</button>
+    </div>
+    </div>
+ </form>

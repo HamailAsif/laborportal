@@ -1,0 +1,64 @@
+﻿@model List<Project.Models.usertable>
+@{
+    ViewBag.Title = "viewusers";
+}
+
+<h2>viewusers</h2>
+<table class="table table-striped">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            First Name
+        </th>
+         <th>
+            Last Name
+        </th>
+         <th>
+            Email
+        </th>
+          <th>
+            Profession
+        </th>
+          <th>
+            Phone
+        </th>
+          <th>
+            Experience
+        </th>
+    </tr>
+    
+@foreach (var item in ViewBag.a)
+{
+    <tr>
+        <td>
+         @item.Id
+         </td>
+        <td>
+         @item.fname
+         </td>
+        <td>
+         @item.lname
+         </td>
+        <td>
+         @item.email
+         </td>
+        <td>
+         @item.profession
+         </td>
+        <td>
+         @item.phoneno
+         </td>
+        <td>
+         @item.experience
+         </td>
+       <td>
+         <a href="~/Home/finduser/@item.Id">Delete</a>
+       </td>
+    </tr>
+}
+    </table>
+<p>
+    @Html.ActionLink("Back to List", "adminmain")
+</p>

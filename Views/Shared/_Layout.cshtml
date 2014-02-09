@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="img, WOW Slider, Wordpress Slideshow, Bootstrap Carousel" />
+	<meta name="description" content="img created with WOW Slider, a free wizard program that helps you easily generate beautiful web slideshow" />
+	<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+	<script type="text/javascript" src="~/Scripts/jquery.js"></script>
+	<!-- End WOWSlider.com HEAD section -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/orbit-1.2.3" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/style2.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.orbit.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.validate.js" type="text/javascript"></script>
+  <script>
+      $(document).ready(function () {
+          $("#profession").validate();
+      });
+  </script>
+  <script>
+      $(document).ready(function () {
+          $("#viewprofile").validate();
+      });
+  </script> 
+   <script>
+       $(document).ready(function () {
+           $("#s123").validate();
+       });
+  </script> 
+    <script>
+        //jQuery.validator.setDefaults({
+        //    debug: true,
+        //    success: "valid"
+        //});
+    </script>
+  @* <script>
+        $(document).ready(function () {
+            $("#login").validate();
+        });
+  </script>*@
+  <script>
+      function search1() {
+          var temp = $("#s123").val();
+         
+          //alert(temp);
+              $.getJSON("/viewprofile/Search123?sdata=" + temp, function (data) {
+                  $("#112").empty();
+                  // alert("hi ");
+                  $.each(data, function (i, item) {
+                      $("#112").append("<tr><td>" + item.fname + "</td><td>" + item.phoneno + "</td>" + "<td>" + item.experience + "</td><td>" + item.email + "</td><tr>");
+                  });
+
+                  return false;
+
+              });
+          }
+    </script>
+</head>
+<body>
+    <div class="container">
+    <header>
+         <div class="container">
+     <nav class="navbar navbar-default" role="navigation">
+         
+      <p class="navbar-text"><h3><b>Labor Portal</b></h3></p>
+
+  
+    </nav>
+     </div>
+
+     </header>
+         
+    <div id="wowslider-container1" style="width:960px;height:360px;max-width:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0">
+	<div class="ws_images"><ul>
+    <li><img src="~/Content/img1.jpg" alt="img1" title="img1" id="wows1_0"/></li>
+    <li><img src="~/Content/img2.jpg" alt="img2" title="img2" id="wows1_1"/></li>
+    <li><img src="~/Content/img3.jpg" alt="img3" title="img3" id="wows1_2"/></li>
+
+    
+  
+    </ul>
+
+	</div>
+    <div class="ws_bullets">
+     <div>
+    <a href="#" title="img1"><img src="~/Content/themes/img1.jpg" alt="img1"/>1</a>
+    <a href="#" title="img2"><img src="~/Content/themes/img2.jpg" alt="img2"/>2</a>
+    <a href="#" title="img3"><img src="~/Content/themes/img3.jpg" alt="img3"/>3</a>
+    </div>
+
+    </div>
+ 
+	<div class="ws_shadow"></div>
+	</div>
+	<script type="text/javascript" src="~/Scripts/wowslider.js"></script>
+	<script type="text/javascript" src="~/Scripts/script.js"></script>
+	<!-- End WOWSlider.com BODY section -->
+        <div class="container">
+    <nav class="navbar  navbar-inverse" role="navigation">
+     
+    <ul class="nav nav-pills nav-justified">
+    <li class="active"><a href="/Home/Index">Home</a></li>
+    <li><a href="/viewprofile/Index">ViewProfile</a></li>
+    <li><a href="/feedback/feedback">Feedback</a></li>
+    <li><a href="/feedback/Index">About us</a></li>
+     
+    </ul>
+   
+    </nav>
+            </div>
+ 
+    @RenderBody()
+
+    @*<footer><p>Labor Portal</p>
+     </footer>
+     </div*@
+       <div id="footer">
+     <div class="container credit">
+
+ </div>
+        <div class="container">
+     <nav class="navbar navbar-inverse" role="navigation">
+          <p class="muted credit navbar-text">All Rrights Are Reserved Copy Rights 2014</p>
+           </nav>
+        </div>
+        </div>
+        </div>
+</body>
+</html>

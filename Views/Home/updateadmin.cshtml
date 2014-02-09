@@ -1,0 +1,19 @@
+﻿@model Project.Models.admintable
+@{
+    ViewBag.Title = "updateadmin";
+}
+
+<div>
+    <form class="form-horizontal" action ="/Home/updateadmin2/@Model.Id" method="post">
+        <div class="form-group">
+        <label for="fname" class="col-sm-3 control-label">password</label>
+        <div class="col-sm-3">
+             @Html.TextBoxFor(m => Model.password)
+        </div>
+        </div>
+          <input type="submit" value="update" style="margin-left: 250pt" />
+    </form>
+    <div>
+    @*  <img  src ="@Model.address" style="height:100px" />*@
+        </div>
+    </div>
